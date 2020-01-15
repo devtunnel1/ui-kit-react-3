@@ -1,19 +1,21 @@
-import React from 'react';
-import { action } from '@storybook/addon-actions';
-import Button from '@material-ui/core/Button';
+import React from 'react'
+import { action } from '@storybook/addon-actions'
+import { withKnobs, select } from '@storybook/addon-knobs'
 import ButtonComponentV1 from './ButtonComponentV1'
 
 export default {
   title: 'Button',
-  component: Button,
-};
+  component: ButtonComponentV1
+}
 
-export const Text = () => <ButtonComponentV1 onClick={action('clicked')} />;
+export const Text = () => (
+  <ButtonComponentV1
+    label='This is a test yo'
+    onClick={action('clicked')}
+    color={select('Color', ['default', 'primary', 'secondary'])}
+  />
+)
 
-// export const Emoji = () => (
-//   <Button variant='contained' color='default' onClick={action('clicked')}>
-//     <span role="img" aria-label="so cool">
-//       😀 😎 👍 💯
-//     </span>
-//   </Button>
-// );
+Text.story = {
+  decorators: [withKnobs]
+}
