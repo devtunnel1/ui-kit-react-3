@@ -6,11 +6,19 @@ class ButtonComponentV1 extends Component {
   render () {
     const {
       label,
+      variant,
       onClick,
-      color
+      color,
+      disabled
     } = this.props
     return (
-      <Button variant='contained' color={color} onClick={onClick}>
+      <Button
+        variant={variant}
+        color={color}
+        onClick={onClick}
+        disabled={disabled}
+        disableElevation
+      >
         {label}
       </Button>
     )
@@ -18,7 +26,7 @@ class ButtonComponentV1 extends Component {
 }
 
 ButtonComponentV1.propTypes = {
-  title: PropTypes.string.isRequired
+  label: PropTypes.string.isRequired
 }
 
 export default ButtonComponentV1
