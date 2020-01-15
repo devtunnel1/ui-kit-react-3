@@ -8,27 +8,27 @@ export default {
   component: ButtonComponentV1
 }
 
-export const ContainedButton = () => (
+export const ContainedDefault = () => (
   <ButtonComponentV1
-    label='Contained'
+    label='Default'
     variant='contained'
     onClick={action('clicked')}
     color={select('Color', ['default', 'primary', 'secondary'])}
   />
 )
 
-ContainedButton.story = {
+ContainedDefault.story = {
   decorators: [withKnobs]
 }
 
-export const ContainedDisabledButton = () => (
+export const ContainedDisabled = () => (
   <ButtonComponentV1
-    label='Contained Disabled'
+    label='Disabled'
     variant='contained'
     disabled={true}
   />
 )
 
-ContainedDisabledButton.story = {
+ContainedDisabled.story = {
   decorators: [withKnobs]
 }
